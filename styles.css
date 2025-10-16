@@ -451,9 +451,11 @@ section {
 .apply-forms {
     display: grid;
     gap: clamp(2rem, 5vw, 3rem);
+    justify-items: center;
 }
 
 .apply-form {
+    width: min(100%, 720px);
     background: var(--color-surface);
     border-radius: clamp(1.25rem, 3vw, 1.75rem);
     padding: clamp(1.5rem, 5vw, 2.5rem);
