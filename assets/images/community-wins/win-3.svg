@@ -1,0 +1,12 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad3" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5b4dff;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#3b2aff;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#grad3)"/>
+  <circle cx="500" cy="80" r="70" fill="#ffffff28" />
+  <text x="50%" y="45%" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#1b1433" font-weight="bold">Community Win</text>
+  <text x="50%" y="55%" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" fill="#5b4dff" font-weight="bold">#3</text>
+</svg>
