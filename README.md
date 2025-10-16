@@ -1,83 +1,66 @@
-# Artisan Lab Landing Page
+# Artisan Lab Landing (Next.js)
 
-A responsive, modern landing page for Artisan Lab - a 1-on-1 & Group Coaching Program.
+Artisan Lab is a Next.js 14 project that powers the landing page experience for the coaching collective. The project is built with the App Router, TypeScript, Tailwind CSS, and a curated set of shared UI primitives to accelerate page construction.
 
-## Features
+## Tech stack
 
-- **Hero Section**: Eye-catching introduction with gradient backgrounds and clear CTAs
-- **Program Overview**: Comprehensive checklist of program features with icons
-- **Community Wins Gallery**: Showcase of success stories with stacked, responsive layout
-- **Who This Is For**: Target audience section with bullet points and divider styling
-- **Footer**: Professional disclaimer and links section
+- [Next.js 14](https://nextjs.org/) with the App Router
+- [React 18](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) & PostCSS toolchain
 
-## Responsive Design
+## Getting started
 
-The landing page is fully responsive with breakpoints at:
-- Mobile: < 720px
-- Tablet: 720px - 960px
-- Desktop: > 960px
-- Large Desktop: > 1040px (with enhanced gallery layout)
+```bash
+npm install
+npm run dev
+```
 
-### Key Responsive Features
+The development server runs on [http://localhost:3000](http://localhost:3000). Edits inside `src/` support hot module replacement.
 
-- Mobile-first approach with fluid typography using `clamp()`
-- Adaptive navigation with mobile toggle menu
-- Stacked gallery layout on mobile, grid layout on desktop
-- Full-width CTAs on mobile, inline on desktop
-- Smooth scrolling with proper anchor offsets
-
-## Typography
-
-The design uses responsive typography with `clamp()` for:
-- Fluid font sizes that scale with viewport
-- Consistent vertical rhythm
-- Optimal readability across all devices
-
-## Color Scheme
-
-- **Primary**: #5b4dff (Purple)
-- **Primary Dark**: #3b2aff
-- **Background**: #f8f7ff (Light purple tint)
-- **Text**: #1b1433 (Dark purple)
-- **Muted Text**: #5f5a76
-- **Accent**: #f4c77b (Gold)
-- **Footer Background**: #0f0b1d (Near black)
-
-## File Structure
+## Project structure
 
 ```
-/
-├── index.html          # Main HTML structure
-├── styles.css          # All styling and responsive rules
-├── script.js           # Interactive features
-├── assets/
+/home/engine/project
+├── public/
+│   ├── logo.svg                 # Placeholder brand mark
 │   └── images/
-│       └── community-wins/  # Placeholder images (SVG)
-│           ├── win-1.svg
-│           ├── win-2.svg
-│           ├── win-3.svg
-│           ├── win-4.svg
-│           ├── win-5.svg
-│           └── win-6.svg
-└── README.md
+│       └── placeholders/        # Base imagery for rapid exploration
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx           # Global metadata, fonts, layout shell
+│   │   ├── page.tsx             # Starter landing experience
+│   │   └── globals.css          # Tailwind layer imports & base tokens
+│   ├── components/              # Shared UI primitives for the landing page
+│   └── lib/                     # Reusable utilities (e.g. class name helper)
+├── tailwind.config.ts           # Theme tokens (palette, spacing, fonts)
+└── postcss.config.js            # Tailwind & Autoprefixer configuration
 ```
 
-## Browser Support
+## Styling primitives
 
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-- Supports CSS Grid, Flexbox, and modern CSS features
+Design tokens live inside `tailwind.config.ts` and `globals.css`:
 
-## Development
+- **Primary palette:** Forest greens (`#207052`, `#17503b`) with warm sand neutrals
+- **CTA accent:** Orange (`#f97316`) for prompts and highlight states
+- **Spacing scale:** Extended Tailwind spacing keys (`3.5`, `4.5`, `18`, `22`, `26`, `30`) for tighter control
+- **Typography:** Google Inter & Sora fonts exposed as CSS variables for Tailwind font families
 
-Simply open `index.html` in a web browser or serve via any static file server.
+Global styles also enable smooth scrolling and set the background gradient for the site chrome.
 
-No build process required - pure HTML, CSS, and vanilla JavaScript.
+## UI primitives
 
-## Notes
+Reusable building blocks for the landing page live in `src/components/`:
 
-- Placeholder images are SVG files in the `assets/images/community-wins/` directory
-- Replace these with actual community win screenshots
-- All images should ideally be 600x400px for consistency
-- Smooth scrolling is enabled by default
-- Intersection Observer API is used for fade-in animations
+- `Container` – Constrains content width with responsive padding
+- `Section` – Handles vertical rhythm, optional edge-to-edge rows, and container overrides
+- `Heading` – Semantic typography with optional eyebrow label and alignment control
+- `Button` – Variant & size aware button with optional `asChild` support for links
+- `VideoEmbed` – Aspect-ratio aware wrapper for Vimeo/YouTube players
+- `TypeformEmbed` – Inline Typeform iframe with sensible defaults
+
+These primitives are designed for composability inside the App Router and adhere to the Tailwind token system defined for the project.
+
+## Smooth scrolling
+
+The global stylesheet applies `scroll-behavior: smooth;` to the `<html>` element so anchor links across the landing page glide between sections without additional JavaScript.

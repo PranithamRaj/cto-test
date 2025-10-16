@@ -31,8 +31,13 @@ yarn-error.log*
 # Build outputs
 dist/
 build/
+.next/
+out/
 *.min.js
 *.min.css
+
+# Next.js
+.vercel/
 
 # Dependencies
 node_modules/
