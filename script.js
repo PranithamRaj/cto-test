@@ -61,6 +61,76 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const testimonialVideos = [
+        {
+            headline: 'Finding Creative Confidence with Mentorship',
+            youtubeId: 'ysz5S6PUM-U',
+            summary: 'Alex explains how dedicated coaching unlocked the clarity to move from scattered ideas to a focused creative practice.'
+        },
+        {
+            headline: 'Turning a Side Hustle into a Sustainable Studio',
+            youtubeId: '1La4QzGeaaQ',
+            summary: 'Priya shares the systems she built with Artisan Lab to scale her client work without sacrificing craft.'
+        },
+        {
+            headline: 'Shipping a Passion Project with Community Support',
+            youtubeId: 'aqz-KE-bpKQ',
+            summary: 'Miguel walks through the milestones that took his concept from sketchbook to launch-ready product.'
+        }
+    ];
+
+    const createTestimonialVideo = ({ headline, youtubeId, summary }, index) => {
+        const wrapper = document.createElement('article');
+        wrapper.className = 'testimonial-video';
+        if (index % 2 !== 0) {
+            wrapper.classList.add('testimonial-video--reverse');
+        }
+
+        const content = document.createElement('div');
+        content.className = 'testimonial-video__content';
+
+        const eyebrow = document.createElement('p');
+        eyebrow.className = 'testimonial-video__eyebrow';
+        eyebrow.textContent = 'Student Interview';
+
+        const title = document.createElement('h3');
+        title.className = 'testimonial-video__headline';
+        title.textContent = headline;
+
+        const description = document.createElement('p');
+        description.className = 'testimonial-video__summary';
+        description.textContent = summary || 'Discover how focused support helped this student accelerate their craft and career.';
+
+        content.append(eyebrow, title, description);
+
+        const media = document.createElement('div');
+        media.className = 'testimonial-video__media';
+
+        const frame = document.createElement('div');
+        frame.className = 'testimonial-video__frame';
+
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${youtubeId}?rel=0`;
+        iframe.title = `${headline} interview`;
+        iframe.loading = 'lazy';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.setAttribute('allowfullscreen', '');
+
+        frame.appendChild(iframe);
+        media.appendChild(frame);
+
+        wrapper.append(content, media);
+
+        return wrapper;
+    };
+
+    const testimonialVideoList = document.getElementById('testimonialVideoList');
+    if (testimonialVideoList) {
+        testimonialVideos.forEach((testimonial, index) => {
+            testimonialVideoList.appendChild(createTestimonialVideo(testimonial, index));
+        });
+    }
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '-100px',
