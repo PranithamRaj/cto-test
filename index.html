@@ -25,7 +25,7 @@
                     <li><a href="#wins">Community Wins</a></li>
                     <li><a href="#who">Who This Is For</a></li>
                 </ul>
-                <a href="#cta" class="btn btn-primary btn-nav">Join Now</a>
+                <a href="#scroll-apply" class="btn btn-primary btn-nav" data-apply-target-desktop="#scroll-apply" data-apply-target-mobile="#scroll-apply2">Apply Now</a>
             </nav>
         </div>
     </header>
@@ -33,12 +33,72 @@
     <main>
         <section class="hero" id="hero">
             <div class="container">
-                <h1 class="hero-title">Transform Your Craft with Expert Guidance</h1>
-                <p class="hero-subtitle">Join Artisan Lab and accelerate your journey to mastery</p>
-                <div class="hero-cta">
-                    <a href="#program" class="btn btn-primary btn-large">Learn More</a>
-                    <a href="#wins" class="btn btn-secondary btn-large">See Success Stories</a>
+                <div class="hero-band" role="presentation">
+                    <span class="hero-band-logo">
+                        <span class="hero-band-icon" aria-hidden="true">A</span>
+                        Artisan Lab
+                    </span>
+                    <span class="hero-band-divider" aria-hidden="true"></span>
+                    <span class="hero-band-text">Operator-led coaching for product and growth leaders</span>
+                    <span class="hero-band-divider" aria-hidden="true"></span>
+                    <span class="hero-band-text hero-band-text-muted">New cohorts start monthly</span>
                 </div>
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <p class="hero-eyebrow">Applications now open</p>
+                        <h1 class="hero-title">Level up your craft with dedicated operators in your corner</h1>
+                        <p class="hero-subtitle">The Artisan Lab combines 1-on-1 mentorship, group intensives, and live feedback from operating experts so you can accelerate your growth in weeks—not years.</p>
+                        <div class="hero-cta">
+                            <a href="#scroll-apply" class="btn btn-primary btn-xl hero-primary-cta" data-apply-target-desktop="#scroll-apply" data-apply-target-mobile="#scroll-apply2">Apply to Artisan Lab</a>
+                            <a href="#program" class="hero-link">Explore the program details</a>
+                        </div>
+                        <p class="hero-microcopy">No commitment to apply. It takes less than 5 minutes.</p>
+                    </div>
+                    <div class="hero-media">
+                        <div class="hero-video">
+                            <span class="hero-video-callout">
+                                <span class="hero-video-pulse" aria-hidden="true"></span>
+                                Click for sound
+                            </span>
+                            <div class="hero-video-frame">
+                                <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+                                    <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                                        <div class="wistia_embed wistia_async_nfxsc2v77y videoFoam=true" style="height:100%;position:relative;width:100%">
+                                            <div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                                                <img src="https://fast.wistia.com/embed/medias/nfxsc2v77y/swatch" style="filter:blur(5px);height:100%;object-fit:cover;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="hero-video-caption">Watch how coaching sessions unfold inside the Artisan Lab.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://fast.wistia.com/embed/medias/nfxsc2v77y.jsonp" async></script>
+        <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+
+        <section class="apply-section section">
+            <div class="container">
+                <div class="apply-header">
+                    <p class="apply-eyebrow">Apply today</p>
+                    <h2 class="apply-title">Tell us about your craft</h2>
+                    <p class="apply-subtitle">Share a few details so we can pair you with the right operator-led pod. A member of the team will reach out within 48 hours.</p>
+                </div>
+                <div class="apply-forms">
+                    <div class="apply-form apply-form-desktop" id="scroll-apply">
+                        <div class="typeform-widget" data-tf-widget="iTdtq1nS" data-tf-medium="artisan-lab-desktop" data-tf-iframe-props="title=Artisan Lab Application (Desktop)" data-tf-transitive-search-params data-tf-height="700" style="width: 100%; height: 100%;"></div>
+                        <p class="apply-consent">By submitting, you acknowledge the <a href="#privacy">Privacy Policy</a> and agree to receive updates about the Artisan Lab.</p>
+                    </div>
+                    <div class="apply-form apply-form-mobile" id="scroll-apply2">
+                        <div class="typeform-widget" data-tf-widget="iTdtq1nS" data-tf-medium="artisan-lab-mobile" data-tf-inline-on-mobile data-tf-iframe-props="title=Artisan Lab Application (Mobile)" data-tf-transitive-search-params data-tf-height="620" style="width: 100%; height: 100%;"></div>
+                        <p class="apply-consent">Checking the consent box in the application allows us to email you about next steps and program logistics.</p>
+                    </div>
+                </div>
+                <p class="apply-note">Have questions before you apply? <a href="#contact">Contact us</a> and we'll respond within one business day.</p>
             </div>
         </section>
 
@@ -325,6 +385,7 @@
         </div>
     </footer>
 
+    <script src="https://embed.typeform.com/next/embed.js" defer></script>
     <script src="script.js"></script>
 </body>
 </html>
