@@ -33,6 +33,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const applyLinks = document.querySelectorAll('[data-apply-target-desktop]');
+    const applyMediaQuery = window.matchMedia('(max-width: 960px)');
+
+    const updateApplyLinks = () => {
+        const useMobileTarget = applyMediaQuery.matches;
+        applyLinks.forEach(link => {
+            const desktopTarget = link.getAttribute('data-apply-target-desktop');
+            const mobileTarget = link.getAttribute('data-apply-target-mobile');
+            const target = useMobileTarget && mobileTarget ? mobileTarget : desktopTarget;
+
+            if (target) {
+                link.setAttribute('href', target);
+            }
+        });
+    };
+
+    if (applyLinks.length) {
+        updateApplyLinks();
+
+        if (typeof applyMediaQuery.addEventListener === 'function') {
+            applyMediaQuery.addEventListener('change', updateApplyLinks);
+        } else if (typeof applyMediaQuery.addListener === 'function') {
+            applyMediaQuery.addListener(updateApplyLinks);
+        }
+
+        window.addEventListener('resize', updateApplyLinks);
+    }
+
     const links = document.querySelectorAll('.nav a[href^="#"], .btn[href^="#"]');
 
     links.forEach(link => {
